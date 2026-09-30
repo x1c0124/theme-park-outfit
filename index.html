@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What Should I Wear to the Theme Park?</title>
+  <link rel="stylesheet" href="style.css?v=33" />
+</head>
+<body data-sky="clear">
+  <main class="wrap">
+    <nav class="topbar">
+      <div class="seg" id="city-seg" role="tablist"></div>
+      <div class="topbar-right">
+        <div class="seg seg-sm" id="unit-seg"></div>
+        <select id="lang" class="pill" data-i18n-aria="ui.language"></select>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-app">
+        <p class="app-title">What Should I Wear</p>
+        <p class="app-title-2">to the Theme Park? 🎢</p>
+        <p class="app-tagline" data-i18n="ui.tagline"></p>
+      </div>
+      <h1 class="hero-city" id="hero-city"></h1>
+      <div class="hero-temp" id="hero-temp">--</div>
+      <p class="hero-cond" id="hero-cond"></p>
+      <p class="hero-hl" id="hero-hl"></p>
+      <p class="hero-headline" id="headline"></p>
+      <p class="status" id="status"></p>
+    </header>
+
+    <section class="glass">
+      <h2 class="glass-title">📅 <span data-i18n="ui.forecast"></span></h2>
+      <div class="days" id="days"></div>
+    </section>
+
+    <div id="result" hidden>
+      <section class="glass">
+        <div class="glass-title glass-title-row">
+          <h2><span data-i18n="ui.hourly"></span></h2>
+          <div class="hours">
+            <select id="open" class="pill" data-i18n-aria="ui.open"></select>
+            <span>–</span>
+            <select id="close" class="pill" data-i18n-aria="ui.close"></select>
+          </div>
+        </div>
+        <div class="chart-legend">
+          <span><i class="sw sw-temp"></i><span data-i18n="ui.legendTemp"></span></span>
+          <span><i class="sw sw-rain"></i><span data-i18n="ui.legendRain"></span></span>
+        </div>
+        <svg id="chart" viewBox="0 0 640 180"></svg>
+      </section>
+
+      <div class="glass rain-choice" id="rain-choice" hidden>
+        <span id="rain-choice-label"></span>
+        <div class="seg" id="rain-choice-seg"></div>
+      </div>
+
+      <div class="outfits">
+        <article class="glass outfit">
+          <div class="glass-title glass-title-row">
+            <h2><span data-i18n="ui.female"></span></h2>
+            <button class="pill swap" id="swap-f" type="button"></button>
+          </div>
+          <p class="look-name" id="female-name"></p>
+          <div class="outfit-body">
+            <div class="avatar" id="avatar-f"></div>
+            <dl id="female"></dl>
+          </div>
+          <div class="why">
+            <h3>💡 <span data-i18n="ui.why"></span></h3>
+            <ul id="female-why"></ul>
+          </div>
+        </article>
+        <article class="glass outfit">
+          <div class="glass-title glass-title-row">
+            <h2><span data-i18n="ui.male"></span></h2>
+            <button class="pill swap" id="swap-m" type="button"></button>
+          </div>
+          <p class="look-name" id="male-name"></p>
+          <div class="outfit-body">
+            <div class="avatar" id="avatar-m"></div>
+            <dl id="male"></dl>
+          </div>
+          <div class="why">
+            <h3>💡 <span data-i18n="ui.why"></span></h3>
+            <ul id="male-why"></ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="tiles" id="stats"></div>
+      <p class="note" data-i18n="ui.indoorNote"></p>
+
+      <div class="outfits">
+        <article class="glass">
+          <h2 class="glass-title" data-i18n="ui.bag"></h2>
+          <ul id="bag" class="list"></ul>
+        </article>
+        <article class="glass">
+          <h2 class="glass-title" data-i18n="ui.tips"></h2>
+          <ul id="tips" class="list"></ul>
+        </article>
+      </div>
+
+    </div>
+
+    <footer data-i18n-html="ui.footer"></footer>
+  </main>
+
+  <script src="i18n.js?v=33"></script>
+  <script src="weather.js?v=33"></script>
+  <script src="outfit.js?v=33"></script>
+  <script src="avatar.js?v=33"></script>
+  <script src="app.js?v=33"></script>
+</body>
+</html>
