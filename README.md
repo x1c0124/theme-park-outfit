@@ -1,10 +1,8 @@
 # What Should I Wear to the Theme Park? 🎢
 
-去主题乐园穿什么：根据奥兰多和洛杉矶的实时天气预报，按你在园内的时段，给出女生和男生的穿搭建议，并解释为什么这样穿。
+No more stressing over what to wear to Universal or Disney! Using the live forecast for Orlando and Los Angeles and the hours you'll actually spend in the park, it suggests outfits for women and men and explains why each one works.
 
 **在线体验：https://x1c0124.github.io/theme-park-outfit/**
-
-> A static web app that turns the live forecast for Orlando and Los Angeles theme parks into outfit ideas for women and men, with the reasoning behind each pick. Chinese and English UI.
 
 ## 运行
 
