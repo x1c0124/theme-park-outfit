@@ -6,6 +6,8 @@
 
 **在线体验：https://x1c0124.github.io/theme-park-outfit/**
 
+![下雨天选择「我会带伞」后的女生和男生穿搭](docs/screenshot-zh.jpg)
+
 ## 运行
 
 纯静态网页，没有构建步骤，也不需要 API key。在项目目录里启动一个本地服务器：
@@ -54,6 +56,7 @@ outfit.js      规则引擎：分档、选穿搭、生成「为什么这样穿�
 i18n.js        全部中英文文案，包括每一套穿搭的描述
 avatar.js      显示 avatar 图片；图片缺失时用 SVG 占位
 avatars/       每套穿搭的人物插画（透明底 PNG）
+docs/          README 里用的截图
 ```
 
 ## 穿搭数据

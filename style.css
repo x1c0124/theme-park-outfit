@@ -114,6 +114,7 @@ body {
 .day .pop { display: block; color: var(--rain); font-size: 12px; min-height: 18px; }
 .day .t { font-weight: 600; font-size: 15px; }
 .day.on { background: var(--glass-strong); }
+.day.on .pop { color: #e3f2ff; }
 
 /* ---------- chart ---------- */
 .chart-legend { display: flex; gap: 14px; font-size: 12px; color: var(--muted); margin-bottom: 4px; }

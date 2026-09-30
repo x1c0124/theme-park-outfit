@@ -6,6 +6,8 @@ No more stressing over what to wear to Universal or Disney! Using the live forec
 
 **Try it: https://x1c0124.github.io/theme-park-outfit/**
 
+![Outfit cards for women and men with the reasoning behind each look](docs/screenshot-en.jpg)
+
 ## Run locally
 
 It's a plain static site: no build step and no API key. Start a local server in the project folder:
@@ -54,6 +56,7 @@ outfit.js      Rules: bands, picking looks, "Why this outfit", packing list and 
 i18n.js        All Chinese and English copy, including every outfit
 avatar.js      Shows the avatar images, with an SVG fallback if one is missing
 avatars/       Character illustration for each look (transparent PNG)
+docs/          Screenshots used in the README
 ```
 
 ## Outfit data
