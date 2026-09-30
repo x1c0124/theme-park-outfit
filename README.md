@@ -1,6 +1,6 @@
 # What Should I Wear to the Theme Park? 🎢
 
-No more stressing over what to wear to Universal or Disney! Using the live forecast for Orlando and Los Angeles and the hours you'll actually spend in the park, it suggests outfits for women and men and explains why each one works.
+No more stressing over what to wear to Universal or Disney! Using the live forecast for Orlando and Los Angeles and the hours you'll actually spend in the park, it suggests outfits for women and men, explains why each one works, and adds a few handy tips for the day.
 
 **在线体验：https://x1c0124.github.io/theme-park-outfit/**
 
