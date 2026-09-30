@@ -1,91 +1,91 @@
 # What Should I Wear to the Theme Park? 🎢
 
+**English** | [简体中文](README.zh-CN.md)
+
 No more stressing over what to wear to Universal or Disney! Using the live forecast for Orlando and Los Angeles and the hours you'll actually spend in the park, it suggests outfits for women and men, explains why each one works, and adds a few handy tips for the day.
 
-**在线体验：https://x1c0124.github.io/theme-park-outfit/**
+**Try it: https://x1c0124.github.io/theme-park-outfit/**
 
-## 运行
+## Run locally
 
-纯静态网页，没有构建步骤，也不需要 API key。在项目目录里启动一个本地服务器：
+It's a plain static site: no build step and no API key. Start a local server in the project folder:
 
 ```bash
 python3 -m http.server 5173
 ```
 
-然后打开 http://localhost:5173 。需要通过服务器打开（直接双击 `index.html` 可能加载不出图片和天气数据）。
+Then open http://localhost:5173. Open it through a server; double-clicking `index.html` may not load the images or the weather.
 
-## 功能
+## Features
 
-- **天气**：[Open-Meteo](https://open-meteo.com/) 免费接口，最多可查未来 16 天。只统计入园到离园这几个小时，包括体感温度、降雨概率和降雨量、紫外线、湿度、风速。
-- **城市**：奥兰多（Walt Disney World、Universal Orlando）、洛杉矶（Disneyland Resort、Universal Studios Hollywood）。每个城市用一个坐标点查天气。
-- **穿搭**：按当天体感温度分到炎热、温暖、凉、冷四档；热天遇到大雨会换成雨天穿搭。每档有多套造型，点「🔄 换一个」循环切换，女生、男生各自独立。
-- **为什么这样穿**：每套穿搭下面有两部分理由。一部分是这套自己的理由；另一部分根据当天天气自动生成，比如紫外线、湿度、晚上降温、室内空调温差、温暖天的面料提醒。
-- **雨天选择**：热天大雨时，可以选「雨天穿搭」或「我会带伞，按温度穿」。
-- **背包清单和小贴士**：根据天气和城市生成。
-- **中英文**：按浏览器语言自动选择，也可以在右上角切换；°C / °F 同样可以切换。两个选择都会被记住。
-- **界面**：iOS 天气风格，背景是随天气变化的天空渐变，卡片是毛玻璃效果，适配手机屏幕。
+- **Weather**: the free [Open-Meteo](https://open-meteo.com/) API, up to 16 days ahead. Only the hours between arrival and departure count: feels-like temperature, chance and amount of rain, UV, humidity and wind.
+- **Cities**: Orlando (Walt Disney World, Universal Orlando) and Los Angeles (Disneyland Resort, Universal Studios Hollywood). Each city uses one forecast point.
+- **Outfits**: the day's feels-like temperature puts it in one of four bands: hot, warm, cool or cold. Heavy rain on a hot day switches to a rain outfit. Each band has several looks; tap "🔄 Show another" to cycle through them, separately for women and men.
+- **Why this outfit**: every look comes with two kinds of reasons: its own, plus ones generated from the day's weather, such as UV, humidity, cooler evenings, cold indoor AC, and fabric weight on warm days.
+- **Rainy-day choice**: on hot, heavily rainy days, choose between the rain outfit and "I'll bring an umbrella, dress for the temperature".
+- **Packing list and tips**: based on the weather and the city.
+- **Chinese and English**: picked from your browser language, switchable in the top-right corner; °C / °F is switchable too. Both choices are remembered.
+- **Design**: inspired by iOS Weather, with a sky gradient that follows the weather, frosted-glass cards and a phone-friendly layout.
 
-## 温度分档
+## Temperature bands
 
-按园内时段的**最高体感温度**分档：
+Bands use the **highest feels-like temperature** during your park hours:
 
-| 档位 | 体感温度 | 说明 |
+| Band | Feels like | Notes |
 |---|---|---|
-| 炎热 | ≥ 27°C | 内搭写吊带或背心，面料优先亚麻、速干、网眼 |
-| 温暖 | 22–27°C | 面料比炎热天稍厚（纯棉、薄针织、牛仔）；提醒去环球带件薄外套，迪士尼可以不带 |
-| 凉 | 10–22°C | 能穿能脱的叠穿 |
-| 冷 | < 10°C | 奥兰多和洛杉矶一般只冷一个早上，外套选中午能塞进包里的 |
-| 雨天 | 热天且大雨或雷雨 | 雨衣加速干短打；也可以选「带伞」按温度穿 |
+| Hot | ≥ 27°C | Camis or tanks underneath; linen, quick-dry and mesh fabrics first |
+| Warm | 22–27°C | Slightly heavier fabrics than hot days (cotton, fine knits, denim); bring a light layer for Universal, skip it at Disney |
+| Cool | 10–22°C | Layers that come on and off easily |
+| Cold | < 10°C | In Orlando and LA it's usually only cold in the morning, so pick a jacket that packs into your bag by noon |
+| Rain | Hot day with heavy rain or storms | Poncho and quick-dry basics, or choose "umbrella" to dress for the temperature |
 
-## 室内温度
+## Indoor temperatures
 
-乐园不公开室内温度，页面上的是估算值（`weather.js` 里的 `INDOOR_C`）：环球 19–21°C，迪士尼 21–23°C，环球通常更冷。
+Parks don't publish indoor temperatures, so the page uses estimates (`INDOOR_C` in `weather.js`): Universal 19–21°C, Disney 21–23°C. Universal usually runs colder.
 
-## 文件结构
+## Files
 
 ```
-index.html     页面结构
-style.css      样式
-app.js         界面交互：城市、日期、入园时段、单位、语言、换一个、雨天选择
-weather.js     调用 Open-Meteo，汇总园内时段的天气；城市坐标和室内估算温度
-outfit.js      规则引擎：分档、选穿搭、生成「为什么这样穿」、背包清单和小贴士
-i18n.js        全部中英文文案，包括每一套穿搭的描述
-avatar.js      显示 avatar 图片；图片缺失时用 SVG 占位
-avatars/       每套穿搭的人物插画（透明底 PNG）
+index.html     Page structure
+style.css      Styles
+app.js         UI: city, date, park hours, units, language, "Show another", rainy-day choice
+weather.js     Calls Open-Meteo and summarizes the park-hours weather; city coordinates and indoor estimates
+outfit.js      Rules: bands, picking looks, "Why this outfit", packing list and tips
+i18n.js        All Chinese and English copy, including every outfit
+avatar.js      Shows the avatar images, with an SVG fallback if one is missing
+avatars/       Character illustration for each look (transparent PNG)
 ```
 
-## 穿搭数据
+## Outfit data
 
-所有穿搭都写在 `i18n.js` 的 `looks` 里，按 `f`（女生）/ `m`（男生）和档位（`hot`、`warm`、`cool`、`cold`、`rain`）分组，中英文各一份。每一套：
+All looks live in `looks` in `i18n.js`, grouped by `f` (women) / `m` (men) and band (`hot`, `warm`, `cool`, `cold`, `rain`), with one copy per language. Each look:
 
 ```js
 {
-  id: '0546',                       // 对应图片 avatars/female-0546.png（男生是 male-<id>.png）
-  name: '吊带 + 短袖衬衫 + 百慕大短裤',
+  id: '0546',                       // image: avatars/female-0546.png (men: male-<id>.png)
+  name: 'Cami + short-sleeve shirt + Bermudas',
   top: '…', bottom: '…', shoes: '…', layer: '…', acc: '…',
-  why: ['这套自己的理由 1', '这套自己的理由 2'],
+  why: ['Reason 1 for this look', 'Reason 2 for this look'],
 }
 ```
 
-文案写法：只写单品类型和大概材质，不写具体颜色；鞋子只写大类（运动鞋、凉鞋、平底鞋、靴子、休闲鞋）；每条都说明为什么适合这个天气。
+Copy style: name the garment type and rough fabric, not specific colors; shoes use broad categories (sneakers, sandals, flats, boots, casual shoes); every item says why it suits the weather.
 
-**新增一套穿搭**：
-1. 在 `i18n.js` 对应档位的中文和英文里各加一条，两边的 `id` 要一样。
-2. 把透明底的人物图放进 `avatars/`，命名为 `female-<id>.png` 或 `male-<id>.png`。
-3. 在 `index.html` 里把 CSS、JS 引用后面的 `?v=` 版本号加 1，避免浏览器继续用旧的缓存。
+**Adding a look**:
+1. Add an entry to the right band in both the Chinese and English copy in `i18n.js`, with the same `id`.
+2. Put a transparent-background character image in `avatars/`, named `female-<id>.png` or `male-<id>.png`.
+3. In `index.html`, bump the `?v=` number on the CSS and JS links so browsers don't keep the old cached files.
 
-## 数据来源
+## Data
 
-天气数据来自 [Open-Meteo](https://open-meteo.com/)。穿搭建议由规则自动生成，仅供参考。
+Weather data from [Open-Meteo](https://open-meteo.com/). Outfit suggestions are generated by rules; use your own judgment too.
 
-## 许可证
+## License
 
-**代码**使用 [MIT License](LICENSE)，可以自由使用、修改和分发。
+The **code** is released under the [MIT License](LICENSE): you're free to use, modify and share it.
 
-**图片不在 MIT 许可范围内。** `avatars/` 里的人物插画仅作个人学习和演示用途：
+**The images are not covered by the MIT License.** The character illustrations in `avatars/` are for personal learning and demo purposes only:
 
-- 插画由 AI 生成，穿搭和姿势参考了社交媒体上公开分享的穿搭照片，整体画风参考了潮玩公仔风格。
-- 请勿将这些图片用于商业用途，或脱离本项目单独使用、再分发。
-- 如果你是相关内容的权利人，希望调整或删除，请提交 Issue，我会尽快处理。
-
-**Images:** the illustrations in `avatars/` are **not** covered by the MIT License. They are AI-generated for personal learning and demo purposes only, with outfits and poses based on publicly shared outfit photos and a designer-toy art style. Please don't use them commercially or redistribute them outside this project. If you own related content and want it changed or removed, please open an issue.
+- They are AI-generated, with outfits and poses based on publicly shared outfit photos and a designer-toy art style.
+- Please don't use them commercially or redistribute them outside this project.
+- If you own related content and want it changed or removed, please open an issue and I'll take care of it.
