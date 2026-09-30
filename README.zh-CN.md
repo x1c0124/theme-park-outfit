@@ -1,4 +1,4 @@
-# What Should I Wear to the Theme Park? 🎢
+# What Should I Wear to the Theme Park?
 
 [English](README.md) | **简体中文**
 
