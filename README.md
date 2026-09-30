@@ -86,8 +86,8 @@ avatars/       每套穿搭的人物插画（透明底 PNG）
 
 **图片不在 MIT 许可范围内。** `avatars/` 里的人物插画仅作个人学习和演示用途：
 
-- 插画由 AI 生成，穿搭和姿势参考了社交媒体上公开分享的穿搭照片，整体画风参考了潮玩公仔风格；原始照片、角色和画风的相关权利归各自的原作者或权利人所有。
+- 插画由 AI 生成，穿搭和姿势参考了社交媒体上公开分享的穿搭照片，整体画风参考了潮玩公仔风格。
 - 请勿将这些图片用于商业用途，或脱离本项目单独使用、再分发。
 - 如果你是相关内容的权利人，希望调整或删除，请提交 Issue，我会尽快处理。
 
-**Images:** the illustrations in `avatars/` are **not** covered by the MIT License. They are AI-generated for personal learning and demo purposes only, with outfits and poses based on publicly shared outfit photos and a designer-toy art style; all rights in the original works belong to their respective owners. Please don't use them commercially or redistribute them outside this project. If you own related content and want it changed or removed, please open an issue.
+**Images:** the illustrations in `avatars/` are **not** covered by the MIT License. They are AI-generated for personal learning and demo purposes only, with outfits and poses based on publicly shared outfit photos and a designer-toy art style. Please don't use them commercially or redistribute them outside this project. If you own related content and want it changed or removed, please open an issue.
